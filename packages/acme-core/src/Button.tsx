@@ -5,7 +5,6 @@ export interface ButtonProps {
 }
 
 export function Button(props: ButtonProps) {
-  // adding comment
   return <button>{props.children}</button>;
 }
 
