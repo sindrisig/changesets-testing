@@ -15,10 +15,8 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
         with:
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          persist-credentials: false
           fetch-depth: 0
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Setup Node.js 16.14
         uses: actions/setup-node@v2
