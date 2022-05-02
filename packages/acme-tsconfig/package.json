@@ -8,8 +8,5 @@
     "node14.json",
     "nextjs.json",
     "react-library.json"
-  ],
-  "publishConfig": {
-    "access": "public"
-  }
+  ]
 }
