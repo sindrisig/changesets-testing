@@ -25,16 +25,6 @@ jobs:
       - name: Install Dependencies
         run: yarn
 
-      - name: Authenticate with Registry
-        run: |
-          echo "@kvika:registry=https://npm.pkg.github.com" > .npmrc
-          echo "registry=https://npm.pkg.github.com" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=$NPM_TOKEN" >> .npmrc
-          npm whoami --registry https://npm.pkg.github.com/
-          git update-index --assume-unchanged .npmrc
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
